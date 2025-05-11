@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nisa'nın Doğum Günü Oyunu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎂</text></svg>">
+</head>
+<body>
+    <!-- Yükleniyor Ekranı -->
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Ses Kontrolü -->
+    <div id="sound-control">
+        <i class="fas fa-volume-up" id="sound-icon"></i>
+    </div>
+
+    <div class="container">
+        <!-- Başlangıç Ekranı -->
+        <div id="start-screen" class="screen">
+            <div class="title-container">
+                <h1>Nisa'nın</h1>
+                <h1 class="highlight">Doğum Günü Oyunu</h1>
+            </div>
+            <div class="floating-balloons">
+                <i class="fas fa-balloon fa-3x balloon-icon" style="color: #FF6B6B;"></i>
+                <i class="fas fa-balloon fa-2x balloon-icon" style="color: #4ECDC4;"></i>
+                <i class="fas fa-balloon fa-4x balloon-icon" style="color: #FFD166;"></i>
+            </div>
+            <p>Balonları Patlat ve Sürprizi Aç!</p>
+            <button id="start-button" class="pulse-button">
+                <i class="fas fa-play"></i> Oyuna Başla
+            </button>
+            <div class="decoration-bottom">
+                <i class="fas fa-birthday-cake fa-2x"></i>
+                <i class="fas fa-gift fa-2x"></i>
+                <i class="fas fa-star fa-2x"></i>
+            </div>
+        </div>
+        
+        <!-- Oyun Ekranı -->
+        <div id="game-screen" class="screen hidden">
+            <div class="game-header">
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div id="progress" class="progress"></div>
+                    </div>
+                    <div class="score-container">
+                        <i class="fas fa-star"></i> Yaş: <span id="score">0</span> / <span id="target-score">18</span>
+                    </div>
+                </div>
+                <button id="pause-button" class="icon-button">
+                    <i class="fas fa-pause"></i>
+                </button>
+            </div>
+            <div id="game-area"></div>
+            <div id="countdown" class="hidden">3</div>
+        </div>
+        
+        <!-- Duraklatma Ekranı -->
+        <div id="pause-screen" class="screen hidden">
+            <h2>Oyun Duraklatıldı</h2>
+            <button id="resume-button" class="pulse-button">
+                <i class="fas fa-play"></i> Devam Et
+            </button>
+            <button id="restart-button">
+                <i class="fas fa-redo-alt"></i> Yeniden Başlat
+            </button>
+        </div>
+        
+        <!-- Kutlama Ekranı -->
+        <div id="celebration-screen" class="screen hidden">
+            <div class="celebration-content">
+                <h1 class="celebration-title">İyi ki Doğdun</h1>
+                <h1 class="celebration-name">Nisa!</h1>
+                <div class="celebration-message">
+                    <p class="message-text">Doğum günün kutlu olsun!</p>
+                    <div class="celebration-emoji">
+                        <span class="emoji">🎂</span>
+                        <span class="emoji">🎉</span>
+                        <span class="emoji">🎈</span>
+                        <span class="emoji">🎁</span>
+                    </div>
+                </div>
+                <div class="cake-container">
+                    <div class="cake">
+                        <div class="candle">
+                            <div class="flame"></div>
+                        </div>
+                    </div>
+                </div>
+                <button id="play-again" class="glow-button">
+                    <i class="fas fa-redo-alt"></i> Tekrar Oyna
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ses Öğeleri -->
+    <audio id="pop-sound" preload="auto">
+        <source src="https://assets.mixkit.co/active_storage/sfx/212/212-preview.mp3" type="audio/mp3">
+    </audio>
+    <audio id="success-sound" preload="metadata">
+        <source src="Happy Birthday (Heavy Metal Version) (Bonus Track).mp3" type="audio/mp3">
+    </audio>
+    <audio id="background-music" preload="metadata" loop>
+        <source src="https://assets.mixkit.co/active_storage/sfx/943/943-preview.mp3" type="audio/mp3">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html> 
